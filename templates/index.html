@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>主页</title>
+
+		<!-- Favicon -->
+		<link rel="stylesheet" href="../static/css/index.css">
+		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+		<script type="text/javascript" src="../static/js/index.js"></script>
+
+		<!--给js传递参数	-->
+		<script type="text/javascript">
+			var data1 = {
+				pageNum:{{ pageNum }}
+			};
+			var data2 = {
+				totalPageNum:{{ totalPageNum }}
+			};
+
+		</script>
+
+
+	</head>
+
+	<body>
+		<h1>csdn爬虫程序爬取文章</h1>
+		<h3>仅用于学习使用</h3>
+		<br /><br /><br />
+
+		<div class="invoice-box">
+			<table>
+				<tr class="top">
+					<td colspan="2">
+						<table>
+							<tr>
+								<td class="title">
+
+								</td>
+
+								<td>
+									用户名:{{username}}<br />
+									登录时间:{{time}}<br />
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr class="information">
+					<td colspan="2">
+						<table>
+							<tr>
+								<td>
+									have a good day!<br />
+									^_^<br />
+
+								</td>
+
+								<td>
+									文章推荐功能还在开发中<br />
+									欢迎关注<a href="https://github.com/cappuccoco">我的github</a><br />
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				{% for i in articles %}
+				<tr class="heading">
+					<td><a href="/page/{{ i[0] }}">{{ i[1] }}</a></td>
+
+					<td>收藏</td>
+				</tr>
+
+				<tr class="details">
+					<td>文章细节<br/></td>
+				</tr>
+				{% endfor %}
+
+
+
+				<tr class="page">
+					<td id="up"><a href="/index?page={{ pageNum-1 }}">上一页</a></td>
+					<td id="down"><a href="/index?page={{ pageNum+1 }}">下一页</a></td>
+				</tr>
+
+				<tr class="pageNum">
+					<td id="pageNum"></td>
+					<td id="pageTotalNum">共<span>{{ totalPageNum }}</span>页</td>
+				</tr>
+
+
+			</table>
+
+			<div id="floor">
+				第<span>{{ pageNum }}</span>页<br/>
+			</div>
+
+		</div>
+	</body>
+</html>

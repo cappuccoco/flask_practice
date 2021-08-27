@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<script type="text/javascript" src="../static/js/regist.js"></script>
+		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+		<link rel="stylesheet" href="../static/css/regist.css">
+	</head>
+	<body>
+		<div class="main">
+			<div class="title">
+				<span>账号注册</span>
+			</div>
+
+			<div class="title-msg">
+				<span>请输入账号信息</span>
+			</div>
+
+			<form class="regist-form" id="regist_form" method="post" action="/regist" onsubmit="return fnRegist()" novalidate>
+				<!--输入框-->
+				<div class="input-content">
+					<!--autoFocus-->
+					<div>
+						<span class="input-title">账号:</span>
+						<input type="text" autocomplete="off" id="userID" placeholder="6-20位字母或数字,字母开头" name="userID"
+							required />
+					</div>
+
+					<div style="margin-top: 16px">
+						<span class="input-title">密码:</span>
+						<input type="password" autocomplete="off" id="pwd" placeholder="6-20位字母或数字" name="password" required
+							maxlength="32" />
+					</div>
+
+					<div style="margin-top: 16px">
+						<span class="input-title">密码确认:</span>
+						<input type="password" autocomplete="off" id="pwd2" placeholder="6-20位字母或数字" name="password2" required
+							maxlength="32" />
+					</div>
+
+					<div style="margin-top: 16px">
+						<span class="input-title">用户名:</span>
+						<input type="text" autocomplete="off" id="username" placeholder="6-20位字符" name="username"
+							required />
+					</div>
+
+					<div style="margin-top: 16px">
+						<span class="input-title">邮箱:</span>
+						<input type="text" autocomplete="off" id="email" placeholder="email" name="email"
+							required />
+					</div>
+
+
+				</div>
+
+				<div class="error" id="error_box">
+					<br/>
+				</div>
+
+				<!--登入按钮-->
+				<div style="text-align: center">
+					<button type="submit" class="enter-btn" onclick="fnRegist()">注册</button>
+				</div>
+
+				<div class="foor">
+					<div class="left"><span></span></div>
+
+					<div class="right"><span><a href="/login">登录</a></span></div>
+				</div>
+			</form>
+
+		</div>
+	</body>
+</html>

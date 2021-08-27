@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+</head>
+    <body>
+        <input id="t1" type="text">
+        <div id="test">{{ text }}</div>
+    </body>
+
+    <script>
+        $('#t1').keyup(
+            function () {
+                var t = document.getElementById("t1")
+                var div = document.getElementById("test")
+                text = t.value
+                $.get(
+                    "/json",
+                    {"text":text},
+                    function (data) {
+                        // text = JSON.parse(data)
+                        $("#test").html(data.text)
+                    }
+                )
+            }
+        )
+    </script>    
+
+</html>

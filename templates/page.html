@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>文章详情页</title>
+
+		<!-- Favicon -->
+		<link rel="stylesheet" href="../static/css/index.css">
+
+	</head>
+
+	<body>
+		<h1>csdn爬虫程序爬取文章</h1>
+		<h3>仅用于学习使用</h3>
+		<br /><br /><br />
+
+		<div class="invoice-box">
+			<table>
+				<tr class="top">
+					<td colspan="2">
+						<table>
+							<tr>
+								<td class="title">
+
+								</td>
+
+								<td>
+									用户名:{{username}}<br />
+									登录时间:{{time}}<br />
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr class="information">
+					<td colspan="2">
+						<table>
+							<tr>
+								<td>
+									have a good day!<br />
+									^_^<br />
+
+								</td>
+
+								<td>
+									文章推荐功能还在开发中<br />
+									欢迎关注<a href="https://github.com/cappuccoco">我的github</a><br />
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr class="heading">
+					<td>{{ data[0] }}</td>
+
+					<td>收藏</td>
+				</tr>
+
+				<tr class="details">
+					<td>
+
+							 <!--scrolling="no"-->
+						<iframe marginwidth=0 marginheight=0 width="110%" height=1000px src="/data/{{ num }}" frameborder="no"></iframe>
+						<br/>
+					</td>
+
+				</tr>
+
+
+
+
+				<tr class="page">
+					<td><a href="/data/{{ num }}">查看爬取后的原网页</td>
+
+					<td> <a href=" /index "> 首页 </a> </td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
